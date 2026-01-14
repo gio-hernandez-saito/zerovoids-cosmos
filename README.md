@@ -2,7 +2,7 @@
 
 > **흩어진 조각들을 우주로 만들다**
 
-현대적인 개발 워크플로우를 위한 체계적인 [Claude Code](https://docs.anthropic.com/en/docs/claude-code) Subagent 컬렉션입니다.
+현대적인 개발 워크플로우를 위한 체계적인 [Claude Code](https://docs.anthropic.com/en/docs/claude-code/quickstart) Subagent 컬렉션입니다.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
