@@ -2,6 +2,7 @@
 name: agent-name
 description: Brief description of when this agent should be invoked (be specific about triggers and use cases)
 created: YYYY-MM-DD
+updated: 2026-01-14
 tools: Bash, Read, Write  # Optional: specify tools or omit to inherit all
 model: sonnet  # Optional: sonnet, opus, haiku, inherit
 tags: []

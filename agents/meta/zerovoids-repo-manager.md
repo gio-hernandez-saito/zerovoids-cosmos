@@ -2,6 +2,7 @@
 name: zerovoids-repo-manager
 description: Use PROACTIVELY when working on the zerovoids-subagents repository itself. Expert in managing repository structure, validating agents, generating documentation, and maintaining quality standards.
 created: 2025-01-15
+updated: 2026-01-14
 tools: Bash, Read, Write
 model: sonnet
 tags: [meta, automation, repository-management]

@@ -2,6 +2,7 @@
 name: code-reviewer
 description: Use PROACTIVELY when code changes are made or when reviewing pull requests. Expert in code quality, best practices, and identifying potential issues across multiple languages and frameworks.
 created: 2025-01-15
+updated: 2026-01-14
 tools: Bash, Read, Write
 model: sonnet
 tags: [code-quality, review, best-practices]

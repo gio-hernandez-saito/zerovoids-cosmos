@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Validate agent files for correctness
+# Validate agent files and documentation format
 
 set -e
 
@@ -85,10 +85,37 @@ validate_agent() {
     echo ""
 }
 
+# Validate markdown date format
+validate_md_dates() {
+    local file="$1"
+    local filename=$(basename "$file")
+    
+    echo "Validating dates: $filename"
+    
+    local date_errors=0
+    
+    # Check Last Updated format if exists
+    if grep -q "Last Updated" "$file"; then
+        if ! grep -q "^\*\*Last Updated\*\*: [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}$" "$file"; then
+            print_error "Invalid Last Updated format"
+            print_warning "Expected format: **Last Updated**: YYYY-MM-DD"
+            ((ERRORS++))
+            date_errors=1
+        fi
+    fi
+    
+    if [ $date_errors -eq 0 ]; then
+        print_success "Valid"
+    fi
+    
+    echo ""
+}
+
 # Main validation
 echo "=== Validating zerovoids-subagents ==="
 echo ""
 
+echo "--- Agent Files ---"
 # Find all agent files (excluding template)
 while IFS= read -r -d '' file; do
     if [ "$(basename "$file")" != "_template.md" ]; then
@@ -96,10 +123,18 @@ while IFS= read -r -d '' file; do
     fi
 done < <(find "$AGENTS_DIR" -name "*.md" -type f -print0)
 
+echo "--- Documentation Files ---"
+# Validate documentation markdown files
+for file in "$REPO_ROOT/README.md" "$REPO_ROOT/CONTRIBUTING.md" "$REPO_ROOT"/docs/*.md; do
+    if [ -f "$file" ]; then
+        validate_md_dates "$file"
+    fi
+done
+
 # Summary
 echo "=== Validation Summary ==="
 if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
-    print_success "All agents valid!"
+    print_success "All files valid!"
     exit 0
 elif [ $ERRORS -eq 0 ]; then
     print_warning "$WARNINGS warning(s)"
