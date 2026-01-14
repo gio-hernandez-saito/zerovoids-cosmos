@@ -19,13 +19,9 @@ print_info() { echo -e "${YELLOW}ℹ${NC} $1"; }
 
 # Read commit message
 commit_msg_file="$1"
-commit_msg=$(cat "$commit_msg_file")
 
-# Normalize line endings (handle both LF and CRLF)
-commit_msg=$(echo "$commit_msg" | tr -d '\r')
-
-# Split into lines
-IFS=$'\n' read -d '' -r -a lines <<< "$commit_msg" || true
+# Read file line by line, preserving empty lines
+mapfile -t lines < "$commit_msg_file"
 
 # Check if message is empty
 if [ ${#lines[@]} -eq 0 ] || [ -z "${lines[0]}" ]; then
@@ -51,18 +47,24 @@ if ! echo "$first_line" | grep -qE "^($ALLOWED_PREFIXES): .+"; then
     exit 1
 fi
 
-# Find first non-empty line after title (skip empty lines)
-body_start_idx=-1
-for ((i=1; i<${#lines[@]}; i++)); do
-    if [ -n "${lines[$i]}" ]; then
-        body_start_idx=$i
-        break
+# 2. Check second line is empty (if exists)
+if [ ${#lines[@]} -gt 1 ]; then
+    second_line="${lines[1]}"
+    if [ -n "$second_line" ]; then
+        print_error "두 번째 줄은 비어있어야 합니다"
+        echo ""
+        print_info "올바른 형식:"
+        echo "  prefix: 제목"
+        echo "  (빈 줄)"
+        echo "  - 내용 1"
+        echo "  - 내용 2"
+        exit 1
     fi
-done
+fi
 
-# 2. If body exists, validate it starts with '- '
-if [ $body_start_idx -ne -1 ]; then
-    for ((i=$body_start_idx; i<${#lines[@]}; i++)); do
+# 3. Check body lines start with '- ' (dash + space)
+if [ ${#lines[@]} -gt 2 ]; then
+    for ((i=2; i<${#lines[@]}; i++)); do
         line="${lines[$i]}"
         # Skip empty lines
         if [ -n "$line" ]; then
