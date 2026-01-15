@@ -6,7 +6,7 @@
   "description": "Transforming shattered fragments into a cosmos",
   "scripts": {
     "prepare": "husky",
-    "agent:idea-generator-critic": "tsx --env-file=.env agents/idea-generator-critic/run.ts"
+    "agent:idea-generator-critic": "tsx agents/idea-generator-critic/run.ts"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
@@ -15,6 +15,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.39.0"
+    "@anthropic-ai/sdk": "^0.39.0",
+    "dotenv": "^16.4.0"
   }
 }

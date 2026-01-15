@@ -2,6 +2,10 @@ import Anthropic from "@anthropic-ai/sdk";
 import * as fs from "fs/promises";
 import * as path from "path";
 import { fileURLToPath } from "url";
+import { config } from "dotenv";
+
+// Load .env file if exists (local dev)
+config();
 
 // ============================================
 // Configuration
@@ -141,7 +145,7 @@ Your response must be valid JSON with this structure:
 \`\`\`
 
 IMPORTANT: 
-- The "content" field must contain the COMPLETE markdown document following the output template
+- The "content" field must contain the COMPLETE Markdown document following the output template
 - Include valid YAML frontmatter at the start
 - Be creative and don't settle for generic ideas
 - Be honest in evaluation - don't inflate scores
@@ -178,7 +182,7 @@ async function generateIdea(
   }
 
   // Parse JSON from response
-  // Handle case where content contains markdown code blocks
+  // Handle case where content contains Markdown code blocks
   let jsonStr = textContent.text;
   
   // Find first ```json and last ```
