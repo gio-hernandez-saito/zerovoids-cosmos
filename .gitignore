@@ -33,6 +33,12 @@ stats/
 coverage/
 .nyc_output/
 
+# Build
+dist/
+
+# Output
+output/
+
 # Temporary
 tmp/
 temp/

@@ -2,11 +2,19 @@
   "name": "zerovoids-subagents",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Transforming shattered fragments into a cosmos",
   "scripts": {
-    "prepare": "husky"
+    "prepare": "husky",
+    "agent:idea-generator-critic": "tsx --env-file=.env agents/idea-generator-critic/run.ts"
   },
   "devDependencies": {
-    "husky": "^9.1.7"
+    "@types/node": "^20.11.0",
+    "husky": "^9.1.7",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
   }
 }
