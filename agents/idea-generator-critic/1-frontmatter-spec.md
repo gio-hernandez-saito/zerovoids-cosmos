@@ -31,7 +31,7 @@ evaluation:
   market_need: {N}              # Problem severity
   monetization_potential: {N}   # Revenue possibility
   tech_interest: {N}            # Technical intrigue
-  portfolio_value: {N}          # Career impact
+  learning_value: {N}           # Personal growth potential
   open_source_value: {N}        # Community benefit
   
   total: {N.N}                  # Weighted average
@@ -419,33 +419,33 @@ factors:
   - Creative problem-solving
 ```
 
-#### `portfolio_value` (1-10)
+#### `learning_value` (1-10)
 ```yaml
-measures: How impressive for career/portfolio?
+measures: How much will I grow from building this?
 
 high_score (8-10):
-  - Demonstrates system design
-  - Unique showcase piece
-  - Interview talking point
-  - Impressive visually/technically
+  - Opens new domain knowledge
+  - Forces deep understanding
+  - Skills transfer to future projects
+  - Paradigm-shifting learning
 
 medium_score (5-7):
-  - Solid addition
-  - Shows competence
-  - Good example of skills
-  - Professional quality
+  - Solidifies important concepts
+  - Introduces new techniques
+  - Practical skills gained
+  - Moderate stretch required
 
 low_score (1-4):
-  - Generic project
-  - Doesn't stand out
-  - Basic functionality
-  - Unimpressive to others
+  - Already know how to do this
+  - Repetitive patterns
+  - Minimal new learning
+  - Comfort zone only
 
 factors:
-  - Visual appeal
-  - Technical sophistication
-  - Problem-solving demonstration
-  - Uniqueness
+  - Conceptual depth
+  - New territory explored
+  - Transferable insights
+  - Growth potential
 ```
 
 #### `open_source_value` (1-10)
@@ -649,7 +649,7 @@ evaluation:
   market_need: 6
   monetization_potential: 4
   tech_interest: 8
-  portfolio_value: 7
+  learning_value: 7
   open_source_value: 8
   
   total: 7.0
@@ -683,7 +683,7 @@ evaluation:
   market_need: 5
   monetization_potential: 3
   tech_interest: 10
-  portfolio_value: 9
+  learning_value: 9
   open_source_value: 7
   
   total: 7.4
@@ -716,7 +716,7 @@ evaluation:
   market_need: 5
   monetization_potential: 4
   tech_interest: 7
-  portfolio_value: 6
+  learning_value: 6
   open_source_value: 6
   
   total: 6.4
@@ -737,4 +737,4 @@ inspiration_source: "Baseball fandom + data visualization expertise"
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

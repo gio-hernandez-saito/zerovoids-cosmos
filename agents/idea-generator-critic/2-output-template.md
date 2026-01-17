@@ -127,20 +127,20 @@
 
 ---
 
-## 💼 Portfolio Value
+## 🌱 What You'll Learn
 
-### Demonstrates
-- **{Skill 1}**: {How project showcases this}
-- **{Skill 2}**: {Technical depth shown}
-- **{Skill 3}**: {Unique capability}
+### New Skills & Concepts
+- **{Skill 1}**: {What you'll understand deeply}
+- **{Skill 2}**: {New technique or paradigm}
+- **{Skill 3}**: {Transferable knowledge}
 
-### Interview Talking Points
-- {Interesting technical decision}
-- {Problem-solving approach}
-- {Trade-off you made}
+### Growth Opportunities
+- {Conceptual understanding you'll gain}
+- {Problem-solving pattern you'll internalize}
+- {Domain knowledge expansion}
 
-### Visual Appeal
-{How will this look? Screenshots, demos, interactions that impress}
+### Stretch Points
+{Where does this push you outside your comfort zone?}
 
 ---
 
@@ -581,42 +581,42 @@ columns:
 
 ---
 
-### Portfolio Value
+### What You'll Learn
 
-#### Demonstrates
+#### New Skills & Concepts
 ```yaml
-format: 3-5 skills/capabilities
-structure: "**{Skill}**: {How project shows it}"
+format: 3-5 learning outcomes
+structure: "**{Skill}**: {What you'll understand}"
 
 focus:
-  - Technical skills
-  - Problem-solving
-  - System design
-  - Domain knowledge
+  - Deep conceptual understanding
+  - New techniques or paradigms
+  - Transferable knowledge
+  - Domain expertise
 
 good:
-  - "**3D graphics programming**: Three.js scene management, camera controls, shaders"
-  - "**Algorithm design**: Force-directed layout for code graphs"
-  - "**UX innovation**: Gamification applied to developer tools"
+  - "**3D graphics fundamentals**: Scene graphs, camera math, render pipelines"
+  - "**Graph algorithms**: Force-directed layouts, traversal patterns"
+  - "**State management patterns**: When to use different approaches"
 
 bad:
-  - "**Coding**: Can write code" # too basic
-  - "**React**: Used React" # just using a framework
+  - "**JavaScript**: Will use JavaScript" # too basic
+  - "**React**: Learn React" # vague
 ```
 
-#### Interview Talking Points
+#### Growth Opportunities
 ```yaml
-purpose: Memorable stories to tell
-format: 2-4 specific examples
+purpose: Identify stretch areas
+format: 2-4 specific growth points
 
 good:
-  - "The LOD system that loads file details on-demand cut load time from 30s to instant"
-  - "Chose force-directed over tree layout after prototyping both and testing with 5 codebases"
-  - "WebGL optimization: batched draw calls reduced render time by 80%"
+  - "Understanding why force-directed beats tree layout for certain graph types"
+  - "Internalizing WebGL performance patterns through hands-on optimization"
+  - "Building intuition for when to chunk data vs load eagerly"
 
 bad:
-  - "I built a thing" # not specific
-  - "It was hard" # not informative
+  - "Will learn stuff" # not specific
+  - "Good experience" # not informative
 ```
 
 ---
@@ -799,4 +799,4 @@ treat all packages equally.
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

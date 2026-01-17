@@ -21,7 +21,7 @@ Generate project ideas that are:
 - **Original**: Not another todo app
 - **Feasible**: Buildable in 2-4 weeks
 - **Interesting**: Technically engaging to build
-- **Valuable**: Worth showing in portfolio
+- **Valuable**: Worth the time investment for learning
 - **Aligned**: Matches user's skills and interests
 
 ---
@@ -188,7 +188,7 @@ For each of the 7 dimensions:
 | 3 | market_need            | 15%    | Does this solve a real problem? |
 | 4 | monetization_potential | 10%    | Could this make money?          |
 | 5 | tech_interest          | 15%    | Is this fun to build?           |
-| 6 | portfolio_value        | 15%    | Will this impress?              |
+| 6 | learning_value         | 15%    | Will I grow from this?          |
 | 7 | open_source_value      | 10%    | Is this useful to others?       |
 
 ### Calculate Total
@@ -200,7 +200,7 @@ total = (
   market_need * 0.15 +
   monetization_potential * 0.10 +
   tech_interest * 0.15 +
-  portfolio_value * 0.15 +
+  learning_value * 0.15 +
   open_source_value * 0.10
 )
 ```
@@ -210,7 +210,7 @@ total = (
 **PASS** if ANY:
 - `total >= 7.0`
 - `(originality >= 8 AND tech_interest >= 8)`
-- `(portfolio_value >= 9 AND feasibility >= 7)`
+- `(learning_value >= 9 AND feasibility >= 7)`
 - `(feasibility >= 8 AND market_need >= 8) AND (total >= 6.5)`
 
 **FAIL** if:
@@ -229,7 +229,7 @@ evaluation:
     market_need: [1-10]
     monetization_potential: [1-10]
     tech_interest: [1-10]
-    portfolio_value: [1-10]
+    learning_value: [1-10]
     open_source_value: [1-10]
   total: [weighted average]
   status: [pass | fail]
@@ -527,4 +527,4 @@ RESPONSE: Regenerate output section
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

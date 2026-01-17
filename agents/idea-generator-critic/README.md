@@ -83,7 +83,7 @@ pnpm agent:idea --json                # JSON 출력 (CI용)
 ┌─────────────────────────────────────────────────────────┐
 │  3. Evaluation (7각형 평가)                              │
 │  - 독창성, 실현가능성, 시장필요성, 수익화가능성          │
-│  - 기술적흥미, 포트폴리오가치, 오픈소스가치              │
+│  - 기술적흥미, 학습가치, 오픈소스가치                    │
 └────────────────┬────────────────────────────────────────┘
                  │
                  ▼
@@ -113,14 +113,14 @@ pnpm agent:idea --json                # JSON 출력 (CI용)
 | market_need | 15% | 시장 필요성 - 실제 문제 해결? |
 | monetization_potential | 10% | 수익화 가능성 |
 | tech_interest | 15% | 기술적 흥미 - 만들기 재밌나? |
-| portfolio_value | 15% | 포트폴리오 가치 |
+| learning_value | 15% | 학습 가치 - 얼마나 성장할 수 있나? |
 | open_source_value | 10% | 오픈소스 가치 |
 
 ### Pass 조건
 
 - `total >= 7.0` OR
 - `(originality >= 8 AND tech_interest >= 8)` OR
-- `(portfolio_value >= 9 AND feasibility >= 7)`
+- `(learning_value >= 9 AND feasibility >= 7)`
 
 ---
 
@@ -150,7 +150,7 @@ evaluation:
   market_need: 5
   monetization_potential: 3
   tech_interest: 10
-  portfolio_value: 9
+  learning_value: 9
   open_source_value: 7
   total: 7.4
   iterations: 1
@@ -216,4 +216,4 @@ pnpm agent:idea --json | jq .
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

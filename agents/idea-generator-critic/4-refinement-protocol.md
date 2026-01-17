@@ -107,7 +107,7 @@ Fix in this order (highest impact first):
 1. **feasibility** - Can't build = everything else meaningless
 2. **originality** - Generic ideas aren't worth building
 3. **tech_interest** - Boring to build = won't finish
-4. **portfolio_value** - No impact = why bother
+4. **learning_value** - No growth = why bother
 5. **market_need** - Nice to have
 6. **open_source_value** - Bonus
 7. **monetization_potential** - Optional
@@ -231,24 +231,24 @@ Before refining, verify:
 
 ---
 
-### 6. Low Portfolio Value (< 6)
+### 6. Low Learning Value (< 6)
 
-**Diagnosis**: Won't impress in interviews, nothing to demo
+**Diagnosis**: Won't learn much, stays in comfort zone
 
 **Strategies**:
 
-| Strategy              | Description                     | Example                                        |
-|-----------------------|---------------------------------|------------------------------------------------|
-| Visual Polish         | Add impressive UI/UX            | Functional but ugly → Beautiful and functional |
-| Demo-ability          | Make it screencast-worthy       | Hard to explain → Obvious in 30 seconds        |
-| Complexity Sweet Spot | Not too simple, not too complex | Todo app → Project management with Gantt       |
-| Talking Points        | Add architectural decisions     | Just works → Interesting trade-offs to discuss |
-| Uniqueness            | Stand out from common projects  | Generic portfolio → Distinctive approach       |
+| Strategy              | Description                       | Example                                            |
+|-----------------------|-----------------------------------|----------------------------------------------------|
+| Tech Stretch          | Use unfamiliar technology         | jQuery → Svelte or solid.js                        |
+| Depth Addition        | Add conceptual complexity         | Simple CRUD → CRUD with optimistic updates        |
+| New Domain            | Enter unfamiliar territory        | Web app → CLI tool or browser extension            |
+| Architecture Challenge | Apply patterns you haven't used   | Spaghetti → Clean architecture with clear layers  |
+| Performance Focus     | Add optimization requirements     | Just works → Works with 10k items smoothly        |
 
 **Questions to ask**:
-- Would I want to demo this?
-- Can I explain interesting decisions?
-- Does it photograph well?
+- What will I understand better after this?
+- Am I stretching into new territory?
+- Will this change how I think about problems?
 
 ---
 
@@ -344,7 +344,7 @@ When refining, document the changes:
 | originality     | 4       | 8       |
 | feasibility     | 9       | 7       |
 | tech_interest   | 4       | 9       |
-| portfolio_value | 4       | 9       |
+| learning_value  | 4       | 9       |
 | **Total**       | **5.0** | **7.6** |
 
 **Result**: PASS
@@ -408,7 +408,7 @@ When refining, document the changes:
 **Trade-offs**:
 - market_need: 8 → 6 (smaller audience)
 - originality: 3 → 8 (nothing like this exists)
-- portfolio_value: 5 → 8 (demonstrates niche expertise)
+- learning_value: 5 → 8 (deep dive into animation internals)
 
 **New Total**: 7.2
 
@@ -458,4 +458,4 @@ When refining, document the changes:
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

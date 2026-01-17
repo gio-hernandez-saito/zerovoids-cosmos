@@ -218,40 +218,40 @@ All dimensions scored **1-10**, where:
 
 ---
 
-### 6. Portfolio Value (포트폴리오 가치)
+### 6. Learning Value (학습 가치)
 
-**What it measures**: How impressive for career/interviews?
+**What it measures**: How much will I grow from building this?
 
 #### Scoring Guide
 
-**9-10 Showcase Worthy**
-- Demonstrates system design
-- Visually impressive
-- Unique talking point
-- "How did you build that?"
-- Indicators: Complex architecture visible, Beautiful demo, Novel approach
+**9-10 Transformative**
+- Opens entirely new domain knowledge
+- Forces deep understanding of fundamentals
+- Skills transferable to many future projects
+- "I'll think differently after this"
+- Indicators: New paradigm, Unfamiliar territory, Conceptual depth
 
-**7-8 Strong Addition**
-- Shows competence clearly
-- Professional quality
-- Conversation starter
-- Indicators: Clean code/architecture, Polished UX
+**7-8 Significant Growth**
+- Solidifies important concepts
+- Introduces new techniques
+- Practical skills gained
+- Indicators: Hands-on with new tools, Architectural thinking required
 
-**4-6 Decent**
-- Fills resume gap
-- Shows basic skills
-- Indicators: Working project, Competent execution
+**4-6 Moderate Learning**
+- Reinforces existing knowledge
+- Minor new techniques
+- Indicators: Familiar patterns, Some new APIs
 
-**1-3 Weak**
-- Generic project
-- Tutorial-level
-- Indicators: Everyone has one, Nothing to discuss
+**1-3 Minimal Growth**
+- Already know how to do this
+- Repetitive work
+- Indicators: Copy-paste territory, No stretch
 
 #### Key Questions
-- Would I want to demo this?
-- Does it show my skills?
-- Is it visually interesting?
-- Can I discuss trade-offs?
+- What will I understand better after this?
+- Will this change how I approach problems?
+- Are there concepts I'll finally "get"?
+- Is this outside my comfort zone?
 
 ---
 
@@ -300,7 +300,7 @@ An idea **PASSES** if it meets **ANY** of these conditions:
 | Option | Condition                                                                                    | Reasoning                                                       |
 |--------|----------------------------------------------------------------------------------------------|-----------------------------------------------------------------|
 | 1      | `total_score >= 7.0`                                                                         | Consistently good across all dimensions                         |
-| 2      | `(originality >= 8 AND tech_interest >= 8)` OR `(portfolio_value >= 9 AND feasibility >= 7)` | Outstanding in creativity OR portfolio impact with buildability |
+| 2      | `(originality >= 8 AND tech_interest >= 8)` OR `(learning_value >= 9 AND feasibility >= 7)` | Outstanding in creativity OR high growth potential with buildability |
 | 3      | `(feasibility >= 8 AND market_need >= 8)` AND `(total_score >= 6.5)`                         | Highly practical and needed, even if not groundbreaking         |
 
 ### Failing Conditions
@@ -333,7 +333,7 @@ total_score = (
   market_need * 0.15 +
   monetization_potential * 0.10 +
   tech_interest * 0.15 +
-  portfolio_value * 0.15 +
+  learning_value * 0.15 +
   open_source_value * 0.10
 )
 ```
@@ -345,7 +345,7 @@ total_score = (
 | feasibility            | 20%    | Can't build it = scores don't matter         |
 | originality            | 15%    | Makes it worth building                      |
 | tech_interest          | 15%    | Makes it worth building                      |
-| portfolio_value        | 15%    | Makes it worth building                      |
+| learning_value         | 15%    | Personal growth opportunity                  |
 | market_need            | 15%    | Nice but not essential for personal projects |
 | monetization_potential | 10%    | Bonus, not requirement                       |
 | open_source_value      | 10%    | Bonus, not requirement                       |
@@ -359,7 +359,7 @@ total_score = (
 | market_need            | 6     | 0.15   | 0.90     |
 | monetization_potential | 5     | 0.10   | 0.50     |
 | tech_interest          | 9     | 0.15   | 1.35     |
-| portfolio_value        | 8     | 0.15   | 1.20     |
+| learning_value         | 8     | 0.15   | 1.20     |
 | open_source_value      | 7     | 0.10   | 0.70     |
 | **Total**              |       |        | **7.25** |
 
@@ -380,7 +380,7 @@ Result: **PASS** (total >= 7.0)
 | market_need            | 5       | Niche need             |
 | monetization_potential | 3       | Probably free          |
 | tech_interest          | 10      | Extremely interesting  |
-| portfolio_value        | 9       | Great showcase         |
+| learning_value         | 9       | Deep learning opportunity |
 | open_source_value      | 7       | Educational value      |
 | **Total**              | **7.4** |                        |
 
@@ -401,7 +401,7 @@ Result: **PASS** (total >= 7.0)
 | market_need            | 5       | Baseball fans only |
 | monetization_potential | 4       | Niche market       |
 | tech_interest          | 7       | D3 practice        |
-| portfolio_value        | 6       | Decent             |
+| learning_value         | 6       | Moderate growth    |
 | open_source_value      | 6       | Some value         |
 | **Total**              | **6.5** |                    |
 
@@ -411,7 +411,7 @@ Result: **PASS** (total >= 7.0)
 
 **After Refinement** (Add real-time pitch prediction using ML):
 - tech_interest: 7 → 9
-- portfolio_value: 6 → 8
+- learning_value: 6 → 8
 - new_total: 7.1
 - **New Result**: PASS
 
@@ -428,7 +428,7 @@ Result: **PASS** (total >= 7.0)
 | market_need            | 2       | Saturated        |
 | monetization_potential | 1       | No chance        |
 | tech_interest          | 3       | Boring           |
-| portfolio_value        | 2       | Embarrassing     |
+| learning_value         | 2       | Nothing new      |
 | open_source_value      | 1       | Pointless        |
 | **Total**              | **3.1** |                  |
 
@@ -489,4 +489,4 @@ Don't lower standards to increase output. The goal is **curated quality**.
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17

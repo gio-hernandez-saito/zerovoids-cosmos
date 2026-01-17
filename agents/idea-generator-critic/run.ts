@@ -129,7 +129,7 @@ Your response must be valid JSON with this structure:
     "market_need": <1-10>,
     "monetization_potential": <1-10>,
     "tech_interest": <1-10>,
-    "portfolio_value": <1-10>,
+    "learning_value": <1-10>,
     "open_source_value": <1-10>
   },
   "refinement_log": [

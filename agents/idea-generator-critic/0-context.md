@@ -331,7 +331,7 @@ bonus:
   - Visual/interactive elements
   - Potential for open source
   - Community could find it useful
-  - Could become a portfolio piece
+  - Could expand my skills significantly
 ```
 
 ### Anti-Patterns
@@ -351,8 +351,8 @@ avoid:
 This context informs:
 - `1-frontmatter-spec.md`: Category classification
 - `2-output-template.md`: Tech stack suggestions
-- `3-evaluation-criteria.md`: Portfolio value, feasibility assessment
+- `3-evaluation-criteria.md`: Learning value, feasibility assessment
 
 ---
 
-**Last Updated**: 2026-01-16
+**Last Updated**: 2026-01-17
