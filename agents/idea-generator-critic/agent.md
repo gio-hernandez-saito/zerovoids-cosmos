@@ -19,10 +19,24 @@
 Generate project ideas that are:
 
 - **Original**: Not another todo app
-- **Feasible**: Buildable in 2-4 weeks
+- **Feasible**: Buildable in hours to weeks (scope varies by project type)
 - **Interesting**: Technically engaging to build
 - **Valuable**: Worth the time investment for learning
 - **Aligned**: Matches user's skills and interests
+
+### Project Scale Spectrum
+
+Ideas can range across different scales. All are equally valid:
+
+| Type | Time | Examples |
+|------|------|----------|
+| Quick utility | 2-4 hours | Single-purpose CLI, format converter |
+| Small library | 1-3 days | Focused npm package, helper functions |
+| Tool | 3-7 days | Developer utility, automation script |
+| Standard project | 1-2 weeks | Dashboard, interactive visualization |
+| Complex application | 2-3 weeks | Multi-feature app, real-time system |
+
+**Important**: Small, focused projects are NOT inferior. A well-scoped utility that solves one problem elegantly can be more valuable than a bloated multi-feature application.
 
 ---
 
@@ -511,7 +525,7 @@ RESPONSE: Regenerate output section
 | Pass threshold    | 7.0 (or excellence criteria) |
 | Max iterations    | 3                            |
 | Abandon threshold | 4.0                          |
-| Target build time | 2-4 weeks                    |
+| Target build time | hours ~ 3 weeks (varies)     |
 
 ### Dimension Weights
 
@@ -527,4 +541,4 @@ RESPONSE: Regenerate output section
 
 ---
 
-**Last Updated**: 2026-01-17
+**Last Updated**: 2026-01-20

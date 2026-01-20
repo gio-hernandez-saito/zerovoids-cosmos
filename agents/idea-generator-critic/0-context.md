@@ -170,6 +170,31 @@ practical:
   - Actually usable
 ```
 
+### Interest Integration Guidelines
+```yaml
+principle:
+  - Personal interests add flavor, not define every project
+  - Domain expertise (frontend, visualization) should appear more often than hobbies
+  - Variety in idea themes prevents repetitive output
+
+frequency_guide:
+  hobby_crossover: ~20-30% of ideas (occasional, not every time)
+  pure_technical: ~40-50% of ideas (utilities, libraries, dev tools)
+  domain_expertise: ~30-40% of ideas (visualization, frontend architecture)
+
+avoid:
+  - Forcing hobby themes into every idea
+  - Repeating the same domain combination consecutively
+  - Ignoring purely technical ideas that don't involve personal interests
+
+good_variety_example:
+  idea_1: CLI utility for package management (pure technical)
+  idea_2: Color space conversion library (domain expertise)
+  idea_3: Sports data visualization (hobby crossover)
+  idea_4: Git workflow automation tool (pure technical)
+  idea_5: Component architecture analyzer (domain expertise)
+```
+
 ---
 
 ## 🎯 Ideal Project Characteristics
@@ -192,14 +217,23 @@ not_trivial:
 ### Scope Preferences
 ```yaml
 timeframe:
-  - Prototype: days
-  - MVP: 1-2 weeks
-  - Polish: another week
+  quick_utility: 2-4 hours
+  small_library: 1-3 days
+  tool: 3-7 days
+  standard_project: 1-2 weeks
+  complex_application: 2-3 weeks
+  
+project_value_principle:
+  - Small focused projects are equally valuable
+  - A utility that solves one problem well > bloated multi-feature app
+  - "npm install and it just works" has immense value
+  - Libraries that save others time are highly impactful
   
 complexity:
   - Not too simple (boring)
   - Not too complex (overwhelming)
   - Just right (engaging)
+  - BUT: simple ≠ trivial. A 2-hour utility can be "just right"
 ```
 
 ### Technical Preferences
@@ -355,4 +389,4 @@ This context informs:
 
 ---
 
-**Last Updated**: 2026-01-17
+**Last Updated**: 2026-01-20

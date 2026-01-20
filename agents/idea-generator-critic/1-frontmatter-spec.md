@@ -207,22 +207,25 @@ bad:
 ```yaml
 format: "{N} {unit}" or "{N-M} {unit}"
 examples:
+  - "2-4 hours"
+  - "1 day"
   - "2-3 days"
   - "1 week"
   - "2-3 weeks"
-  - "1 month"
 
 rules:
   - For MVP, not polished product
   - Assume experienced developer
   - Include learning curve if new tech
   - Be realistic, not optimistic
+  - Small scope is valid - don't inflate time estimates
 
 ranges:
-  - Days: Small utilities, simple tools
-  - 1-2 weeks: Standard projects
-  - 2-4 weeks: Complex applications
-  - 1+ month: Mark as "expert" difficulty
+  - Hours: Quick utilities, single-purpose CLI, converters
+  - 1-3 days: Small libraries, focused npm packages
+  - 3-7 days: Developer tools, automation scripts
+  - 1-2 weeks: Standard projects, dashboards
+  - 2-3 weeks: Complex applications, multi-feature systems
 ```
 
 #### `tech_stack`
@@ -546,7 +549,7 @@ fail:
 #### `related_projects`
 ```yaml
 format: array of project names/repos
-example: [heritage, zerovoids-subagents]
+example: [some-project, another-repo]
 
 use_when:
   - Builds on existing project
@@ -656,8 +659,7 @@ evaluation:
   iterations: 1
   status: pass
 
-related_projects: [heritage]
-inspiration_source: "Personal pain point - monorepo component tracking"
+inspiration_source: "Personal pain point - component tracking"
 ---
 ```
 
@@ -737,4 +739,4 @@ inspiration_source: "Baseball fandom + data visualization expertise"
 
 ---
 
-**Last Updated**: 2026-01-17
+**Last Updated**: 2026-01-20

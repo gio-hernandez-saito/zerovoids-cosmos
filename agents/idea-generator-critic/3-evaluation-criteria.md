@@ -80,8 +80,9 @@ All dimensions scored **1-10**, where:
 - Clear technical path
 - Libraries/tools exist
 - Minimal unknowns
-- 1-2 weeks realistic
+- Hours to 2 weeks depending on scope
 - Indicators: Existing examples to reference, Mature ecosystem, Well-documented APIs
+- Note: Small scope ≠ low score. A well-scoped 4-hour utility can score 10.
 
 **7-8 Feasible**
 - Some challenges but manageable
@@ -265,7 +266,9 @@ All dimensions scored **1-10**, where:
 - Fills clear gap
 - Many potential users
 - Highly reusable
-- Examples: Missing tool everyone needs, Library solving common problem
+- Small focused library that solves one problem well
+- "npm install and it works" type of package
+- Examples: Missing npm package for common task, Utility library everyone copies from Stack Overflow, Single-purpose tool that saves hours
 
 **7-8 Good Value**
 - Useful to niche
@@ -489,4 +492,4 @@ Don't lower standards to increase output. The goal is **curated quality**.
 
 ---
 
-**Last Updated**: 2026-01-17
+**Last Updated**: 2026-01-20
