@@ -1,9 +1,9 @@
-name: "Daily Idea Generation"
+name: "Idea Generation (Mon/Thu)"
 
 on:
   schedule:
-    # 매일 KST 오전 9시 (UTC 0시)
-    - cron: '0 0 * * *'
+    # 월요일, 목요일 KST 오전 9시 (UTC 0시)
+    - cron: '0 0 * * 1,4'
   workflow_dispatch:
 
 env:
@@ -14,10 +14,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout subagents
+      - name: Checkout cosmos
         uses: actions/checkout@v4
         with:
-          path: subagents
+          path: cosmos
 
       - name: Checkout idea-bank
         uses: actions/checkout@v4
@@ -38,47 +38,41 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd subagents
+          cd cosmos
           pnpm install
 
       - name: Generate idea
         id: generate
         run: |
-          cd subagents
-          RESULT=$(pnpm run probe:idea-generator-critic --json 2>/dev/null | tail -1)
+          cd cosmos
+          RESULT=$(pnpm run probe:idea-generator-critic --json --ideas-dir ../idea-bank/ideas 2>/dev/null | tail -1)
           echo "result=$RESULT" >> $GITHUB_OUTPUT
 
       - name: Process result
         run: |
           cd idea-bank
 
-          YEAR=$(date +%Y)
-          MONTH=$(date +%m)
-
           STATUS=$(echo '${{ steps.generate.outputs.result }}' | jq -r '.status')
           FILENAME=$(echo '${{ steps.generate.outputs.result }}' | jq -r '.filename')
           CONTENT=$(echo '${{ steps.generate.outputs.result }}' | jq -r '.content')
 
           if [ "$STATUS" = "pass" ]; then
-            mkdir -p "ideas/$YEAR/$MONTH"
-            echo "$CONTENT" > "ideas/$YEAR/$MONTH/$FILENAME"
-            echo "Idea passed"
+            echo "$CONTENT" > "ideas/$FILENAME"
+            echo "Idea passed: $FILENAME"
           else
-            mkdir -p "archive/failed"
-            echo "$CONTENT" > "archive/failed/$FILENAME"
-            echo "Idea failed"
+            echo "Idea failed — not saved"
           fi
 
       - name: Commit and push
         run: |
           cd idea-bank
-          git config user.name "Idea Generator Bot"
-          git config user.email "bot@zerovoids.dev"
+          git config user.name "gio-hernandez-saito"
+          git config user.email "gio.hernandez.saito@gmail.com"
           git add .
 
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "feat: weekly idea $(date +%Y-%m-%d)"
+            git commit -m "feat: new idea $(date +%Y-%m-%d)"
             git push
           fi
