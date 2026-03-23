@@ -80,10 +80,11 @@ jobs:
 
       - name: Process result
         if: steps.generate.outputs.success == 'true'
+        env:
+          RESULT: ${{ steps.generate.outputs.result }}
         run: |
           cd idea-bank
 
-          RESULT='${{ steps.generate.outputs.result }}'
           STATUS=$(echo "$RESULT" | jq -r '.status')
           FILENAME=$(echo "$RESULT" | jq -r '.filename')
 
