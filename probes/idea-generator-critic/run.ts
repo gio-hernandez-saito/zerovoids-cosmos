@@ -613,11 +613,42 @@ function extractJson(text: string): string {
     return text.slice(fenceStart + 7, fenceEnd).trim();
   }
 
-  // Strategy 2: first { ... last } (greedy outermost braces)
+  // Strategy 2: brace-depth counting to find the first complete top-level JSON object
+  // This correctly handles nested braces inside string values (e.g. markdown in "content")
   const firstBrace = text.indexOf("{");
-  const lastBrace = text.lastIndexOf("}");
-  if (firstBrace !== -1 && lastBrace > firstBrace) {
-    return text.slice(firstBrace, lastBrace + 1).trim();
+  if (firstBrace !== -1) {
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+
+    for (let i = firstBrace; i < text.length; i++) {
+      const ch = text[i];
+
+      if (escaped) {
+        escaped = false;
+        continue;
+      }
+
+      if (ch === "\\") {
+        escaped = true;
+        continue;
+      }
+
+      if (ch === '"') {
+        inString = !inString;
+        continue;
+      }
+
+      if (inString) continue;
+
+      if (ch === "{") depth++;
+      else if (ch === "}") {
+        depth--;
+        if (depth === 0) {
+          return text.slice(firstBrace, i + 1);
+        }
+      }
+    }
   }
 
   // Fallback: return as-is, let caller handle parse error
