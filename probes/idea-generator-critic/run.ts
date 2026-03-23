@@ -13,7 +13,7 @@ config();
 
 const CONFIG = {
   model: "claude-sonnet-4-6",
-  maxTokens: 8192,
+  maxTokens: 16384,
   outputDir: "./output",
 } as const;
 
@@ -561,7 +561,9 @@ Follow this execution flow:
 
 ## Output Format
 
-Your response must be valid JSON with this structure:
+**CRITICAL: Your ENTIRE response must be a single JSON object. Do NOT include any text, explanation, analysis, or thinking before or after the JSON. Start your response with \`{\` and end with \`}\`. Any non-JSON text will cause a parsing failure.**
+
+JSON schema:
 
 \`\`\`json
 {
@@ -592,13 +594,15 @@ Your response must be valid JSON with this structure:
 }
 \`\`\`
 
-IMPORTANT:
+RULES:
+- **NO prose, NO explanation, NO markdown outside JSON** — respond with ONLY the JSON object
 - The "content" field must contain the COMPLETE Markdown document following the output template
 - In the frontmatter, use id: "idea-${String(nextIndex).padStart(4, "0")}" and generated: "${new Date().toISOString()}"
 - Be creative and don't settle for generic ideas
 - Be honest in evaluation - don't inflate scores
 - Score distinctness HONESTLY — if it's similar to existing ideas, score it LOW
-- **CRITICAL: Write ALL content in Korean (한국어)** - including title, descriptions, problem, solution, all sections. Only keep technical terms, code, and YAML keys in English.`;
+- **Write ALL content in Korean (한국어)** - including title, descriptions, problem, solution, all sections. Only keep technical terms, code, and YAML keys in English.
+- Remember: your response starts with \`{\` — nothing else before it`;
 }
 
 // ============================================
