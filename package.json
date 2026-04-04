@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Claude Code를 위한 통합 에이전트 시스템. Skills, Commands, Agents, Workflows를 단방향 레이어 구조로 관리합니다.",
   "scripts": {
-    "prepare": "husky",
+    "prepare": "node -e \"try{require('husky')()}catch(e){}\"",
     "validate": "node scripts/validate.cjs",
     "build": "node scripts/build.cjs",
     "postinstall": "node scripts/postinstall.cjs",
