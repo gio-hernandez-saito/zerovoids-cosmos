@@ -22,7 +22,7 @@ function main() {
   const root = findProjectRoot(path.resolve(pkgDir, "..", "..", ".."));
   if (!root || path.resolve(root) === path.resolve(pkgDir)) return;
 
-  console.log(`\n🧹 subagents: cleaning up from ${root}\n`);
+  console.log(`\n🧹 cosmos: cleaning up from ${root}\n`);
   for (const l of LINKS) {
     const src = path.resolve(pkgDir, l.source);
     const tgt = path.resolve(root, l.target);
@@ -34,7 +34,7 @@ function main() {
       console.log(`  ✓ removed ${tgt}`);
     }
   }
-  console.log("\n✅ subagents: cleanup complete\n");
+  console.log("\n✅ cosmos: cleanup complete\n");
 }
 
 main();

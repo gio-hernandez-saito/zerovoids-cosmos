@@ -42,13 +42,13 @@ function main() {
   const root = findProjectRoot(path.resolve(pkgDir, "..", "..", ".."));
   if (!root || path.resolve(root) === path.resolve(pkgDir)) return;
 
-  console.log(`\n🔗 subagents: linking to ${root}\n`);
+  console.log(`\n🔗 cosmos: linking to ${root}\n`);
   for (const l of LINKS) {
     const src = path.resolve(pkgDir, l.source);
     if (!fs.existsSync(src)) continue;
     createLink(src, path.resolve(root, l.target));
   }
-  console.log("\n✅ subagents: setup complete\n");
+  console.log("\n✅ cosmos: setup complete\n");
 }
 
 main();

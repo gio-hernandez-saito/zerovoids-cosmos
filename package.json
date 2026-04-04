@@ -1,14 +1,32 @@
 {
-  "name": "zerovoids-cosmos",
+  "name": "@zerovoids/cosmos",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "type": "module",
   "description": "Claude Code를 위한 통합 에이전트 시스템. Skills, Commands, Agents, Workflows를 단방향 레이어 구조로 관리합니다.",
   "scripts": {
     "prepare": "husky",
     "validate": "node scripts/validate.cjs",
     "build": "node scripts/build.cjs",
+    "postinstall": "node scripts/postinstall.cjs",
+    "preuninstall": "node scripts/preuninstall.cjs",
+    "prepublishOnly": "npm run validate && npm run build",
     "probe:idea-generator-critic": "tsx probes/idea-generator-critic/run.ts"
+  },
+  "files": [
+    "dist/",
+    "scripts/postinstall.cjs",
+    "scripts/preuninstall.cjs"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gio-hernandez-saito/zerovoids-cosmos.git"
   },
   "devDependencies": {
     "@types/node": "^20.11.0",
