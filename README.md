@@ -140,11 +140,14 @@ cosmos는 [Claude Code Skills 표준](https://code.claude.com/docs/en/skills)의
 ```yaml
 ---
 # 표준 Claude Code Skill 필드
-name: feature-sliced-design                       # 필수, 디렉토리명과 일치
-description: This skill should be used when ...   # 권장 (third-person, 250자 이내)
+name: feature-sliced-design                       # 필수, 디렉토리명과 일치 (lowercase + hyphens, ≤64자)
+description: This skill should be used when ...   # 권장 (third-person, 트리거 phrase 인용, ≤250자)
 disable-model-invocation: true                    # 선택, side-effect 있는 task에 권장
 user-invocable: false                             # 선택, reference-only 스킬에 권장
-allowed-tools: Read Grep                          # 선택
+allowed-tools: Read Grep Glob                     # 선택, 권한 제한
+paths:                                            # 선택, 자동 활성화 path 패턴
+  - "src/**/*.ts"
+argument-hint: "[component] [target]"             # 선택, autocomplete 힌트
 
 # cosmos 확장 필드
 version: 0.0.1               # 필수, semver, npm 패키지 버전과 별개
