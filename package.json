@@ -1,6 +1,6 @@
 {
   "name": "@gio-hernandez-saito/cosmos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "type": "module",
   "description": "Claude Code를 위한 통합 에이전트 시스템. Skills, Commands, Agents, Workflows를 단방향 레이어 구조로 관리합니다.",
